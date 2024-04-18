@@ -1,0 +1,220 @@
+
+/* HEADER STYLES */
+.header-container{
+background: linear-gradient(180deg, #11152F 0%, #121216 100%);
+color:#fff;
+position: relative;
+z-index: 1020;
+}
+.header-container .header-section{
+padding:15px 5%;
+}
+.header-container .banner-image{
+margin:4rem auto;
+}
+.header-container .cta-btn{
+margin-top:1rem;
+}
+
+/* .header-container::before{
+content:"";
+display:inline-block;
+width:100%;
+height:74px;
+position:absolute;
+top:100%;
+left:0;
+background:url(../images/clip-path.svg) no-repeat center/cover;
+z-index:998;
+} */
+
+
+.countup-container .grid-container-3{
+place-items:center;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+}
+.countup-container{
+margin-top:2.5rem;
+}
+.countup-container .grid-container-3 h3{
+margin-bottom:initial;
+background: linear-gradient(180deg, #729FED 0%, #6F99EF 100%);
+background-clip:text;
+-webkit-background-clip:text;
+color:transparent;
+}
+
+
+/* Added Styles */
+.header-container section{
+/* border:1px solid red; */
+}
+.header-container .logo-container a{
+width:35px;
+height:35px;
+padding:0;
+}
+.header-container .logo-container a{
+padding:0;
+}
+.header-container .flex-container-2{
+display:flex;
+justify-content:space-between;
+align-items:flex-start;
+position: relative;
+z-index:998;
+}
+.header-container .flex-container-2>*:nth-child(2){
+flex-basis:48%;
+}
+.header-container .toggle-bar{
+cursor:pointer;
+/* z-index:-1; */
+}
+
+.header-container .cta-btn.login{
+background-color:initial;
+border:1px solid #000;
+color:#000;
+}
+.header-container .close-toggle-bar{
+display:inline-block;
+font-size:2rem;
+position: absolute;
+top:15px;
+right:0;
+cursor: pointer;
+padding:0.5rem 1rem;
+width:100px;
+/* height:50px; */
+color:#ffffff;
+}
+
+/*==============Search Styles=========== */
+.header-container .search{
+/* flex-basis:100%; */
+}
+.header-container .form-field input{
+ border-radius:25px;
+ background: #808080;
+ /* width:50%; */
+}
+.header-container .form-field ::placeholder{
+color:#fff;
+}
+
+/* HIDE THE NAVMENU */
+.nav-menu{
+position: absolute;
+width:100%;
+height:100%;
+top:0;
+left: 0;
+z-index:1020;
+position:fixed;
+text-align:center;
+background: linear-gradient(180deg, #11152F 0%, #121216 100%);
+transform-origin:top right;
+transform:scale(0,1);
+}
+.nav-menu.active{
+transform:scale(1);
+transition:transform 0s ease-in;
+}
+.header-container .list-menu{
+height:100vh;
+padding:2rem;
+position: absolute;
+top:60px;
+width:100%;
+transform-origin:0 0;
+transform:translateY(150%);
+transition:0.3s  ease-out;
+z-index:1040;
+background-color:#fff;
+}
+.nav-menu.active .list-menu{
+transform:translateY(0%);
+}
+.close-toggle-container{
+line-height:15px;
+padding:15px;
+}
+
+
+
+/* DESKTOP DEVICE */
+@media(min-width:980px){
+.header-container .logo-container{
+width:58px;
+height:58px;
+}
+.header-container .flex-container-2>*{
+flex-basis:auto;
+}
+}
+
+
+/* LARGE DESKTOP DEVICE */
+@media(min-width:1200px){
+/* Turn off the  toggle bar and some hiddden properties */
+.toggle-bar,
+.close-toggle-container{
+display:none;
+}
+.header-container .list-menu a{
+color:#fff;
+}
+.nav-menu{
+position: static;
+width:auto;
+height:auto;
+text-align:initial;
+transform-origin:initial;
+transform:initial;
+background:transparent;
+}
+.header-container .cta-btn{
+margin-top:0;
+}
+.header-container .list-menu{
+height:auto;
+padding:initial;
+position:static;
+width:auto;
+transform-origin:initial;
+transform:initial;
+transition:initial;
+display:flex;
+align-items:flex-start;
+/* justify-content:center; */
+gap:1.2rem;
+background-color:transparent;
+}
+.header-container .list-menu>*:nth-child(2){
+margin-right:auto;
+}
+.header-container .flex-container-2{
+align-items:center;    
+align-items:flex-start;
+justify-content:space-between;
+}
+.header-container .flex-container-2>*{
+flex-basis:auto;
+}
+.header-container .flex-container-2>*:nth-child(1){
+}
+.header-container .flex-container-2>*:nth-child(2){
+flex-basis:48%;
+}
+
+.header-container .flex-container-2>*:last-child{
+/* flex-basis:75%; */
+/* border:1px solid; */
+}
+.header-container .cta-btn.login{
+border:1px solid #fff;
+color:#fff;
+}
+}

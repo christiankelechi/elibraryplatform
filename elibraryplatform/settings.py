@@ -23,10 +23,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-xa#m-th*3m5^33%%38&r&e7pp3!j*qejd9kb7+5762^d9=$&&2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['.vercel.app', '.now.sh','*']
 
 # Application definition
 
@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'core_app_root.security',
     'core_app_root.security.user',
     'core_app_root.security.auth',
+    'core_app_root.ai_applications'
 ]
 
 
@@ -73,7 +74,7 @@ import os
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'core_app_root/templates'),os.path.join(BASE_DIR,'core_app_root/user_services/recommenderapp/templates')],
+        'DIRS': [os.path.join(BASE_DIR,'core_app_root/templates'),os.path.join(BASE_DIR,'core_app_root/security/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -92,10 +93,20 @@ WSGI_APPLICATION = 'elibraryplatform.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER':'postgres.ugqzuivgrhgndhqqnbdg',
+        'PASSWORD':'Kelechi1999!',
+        'PORT':'5432 ',
+        'HOST':'aws-0-eu-central-1.pooler.supabase.com'
     }
 }
 
@@ -136,7 +147,8 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 # STATIC_ROOT=os.path.join(BASE_DIR,'static')
-STATICFILES_DIRS=[os.path.join(BASE_DIR,'static')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR/'static')]
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles_build','static')
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
@@ -188,3 +200,6 @@ SITE_ID = 1
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# user=postgres.ugqzuivgrhgndhqqnbdg password=[YOUR-PASSWORD] 
+# host=aws-0-eu-central-1.pooler.supabase.com port=5432 
+# dbname=postgres

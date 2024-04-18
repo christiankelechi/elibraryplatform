@@ -93,7 +93,7 @@ class RegisterViewSet(viewsets.ModelViewSet):
 
             # fullname=str(serializer.validated_data['first_name'])+", "+str(serializer.validated_data['last_name'])
             # return render(request,'account/register_done.html',{'fullname':fullname})
-            user = get_object_or_404(User, email=email)
+            
         
         # Update the _active field to True
             # user.is_active=False
@@ -135,7 +135,7 @@ class RegisterViewSet(viewsets.ModelViewSet):
                 "refresh": res["refresh"],
                 "token": res["access"],
                 'user_email':res['user_email'],
-                "is_active":False,
+                "is_active":True,
                 "status":True,
                 "success_msg":"Account creation successful, check email to verify your account"
             }, status=status.HTTP_201_CREATED)   

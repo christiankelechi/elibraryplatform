@@ -69,6 +69,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     created = models.DateTimeField(auto_now=True)
     updated = models.DateTimeField(auto_now_add=True,null=True,blank=True)
     confirm_password=models.CharField(max_length=1000,null=True,blank=True)
+    phone_number=models.CharField(max_length=1000,null=True,blank=True)
     # confirm_password=hashlib.sha256(str(confirm_password).encode()).hexdigest()
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username']

@@ -1,0 +1,87 @@
+Mathematical Foundations
+Deep learning is a branch of machine learning that uses many layers of artificial 
+neurons stacked one on top of the other for identifying complex features within the 
+input data and solving complex real-world problems. It can be used for both supervised 
+and unsupervised machine-learning tasks. Deep learning is currently used in areas 
+such as computer vision, video analytics, pattern recognition, anomaly detection, text 
+processing, sentiment analysis, and recommender system, among other things. Also, it 
+has widespread use in robotics, self-driving car mechanisms, and artificial intelligence 
+systems in general.
+Mathematics is at the heart of any machine-learning algorithm. A strong grasp 
+of the core concepts of mathematics goes a long way in enabling one to select the 
+right algorithms for a specific machine-learning problem, keeping in mind the end 
+objectives. Also, it enables one to tune machine-learning/deep-learning models better 
+and understand the possible reasons for an algorithm not performing as desired. 
+Deep learning being a branch of machine learning demands as much expertise 
+in mathematics, if not more, than that required for other machine-learning tasks. 
+Mathematics as a subject is vast, but there are a few specific topics that machine￾learning or deep-learning professionals and/or enthusiasts should be aware of to extract 
+the most out of this wonderful domain of machine learning, deep learning, and artificial 
+intelligence. Illustrated in Figure 1-1 are the different branches of mathematics along 
+with their importance in the field of machine learning and deep learning. We will discuss 
+the relevant concepts in each of the following branches in this chapter:
+• Linear algebra
+• Calculus
+• Probability
+• Optimization and formulation of machine-learning algorithms
+1
+© Santanu Pattanayak 2023 
+S. Pattanayak, Pro Deep Learning with TensorFlow 2.0, https://doi.org/10.1007/978-1-4842-8931-0_1
+Chapter 1 Mathematical Foundations
+Figure 1-1. Importance of mathematics topics for machine learning and 
+data science
+Note Readers who are already familiar with these topics can choose to skip this 
+chapter or have a casual glance through the content.
+Linear Algebra
+Linear algebra is a branch of mathematics that deals with vectors and their 
+transformation from one vector space to another vector space. Since in machine 
+learning and deep learning we deal with multidimensional data and their manipulation, 
+linear algebra plays a crucial role in almost every machine-learning and deep-learning 
+algorithm. Illustrated in Figure 1-2 is a three-dimensional vector space where v1, v2, and 
+v3 are vectors and P is a 2-D plane within the three-dimensional vector space.
+2
+3
+Figure 1-2. Three-dimensional vector space with vectors and a vector plane
+Vector
+An array of numbers, either continuous or discrete, is called a vector, and the space 
+consisting of vectors is called a vector space. Vector space dimensions can be finite or 
+infinite, but most machine-learning or data-science problems deal with fixed-length 
+vectors, for example, the velocity of a car moving in the plane with velocities Vx and Vy in 
+the x and y direction respectively (see Figure 1-3).
+Figure 1-3. Car moving in the x-y vector plane with velocity components Vx and Vy
+Chapter 1 Mathematical Foundations
+4
+In machine learning, we deal with multidimensional data, so vectors become very 
+crucial. Let’s say we are trying to predict the housing prices in a region based on the area 
+of the house, number of bedrooms, number of bathrooms, and population density of the 
+locality. All these features form an input feature vector for the housing price prediction 
+problem.
+Scalar
+A one-dimensional vector is a scalar. As learned in high school, a scalar is a quantity that has 
+only magnitude and no direction. This is because, since it has only one direction along which 
+it can move, its direction is immaterial, and we are only concerned about the magnitude.
+Examples: height of a child, weight of fruit, etc.
+Matrix
+A matrix is a two-dimensional array of numbers arranged in rows and columns. The size 
+of the matrix is determined by its row length and column length. If a matrix A has m rows 
+and n columns, it can be represented as a rectangular object (see Figure 1-4a) having m × n
+elements, and it can be denoted as Am × n.
+Figure 1-4a. Structure of a matrix
+Chapter 1 Mathematical Foundations
+5
+A few vectors belonging to the same vector space form a matrix.
+For example, an image in grayscale is stored in a matrix form. The size of the image 
+determines the image matrix size, and each matrix cell holds a value from 0 to 255 
+representing the pixel intensity. Illustrated in Figure 1-4b is a grayscale image followed 
+by its matrix representation.
+Figure 1-4b. Structure of a matrix
+Tensor
+A tensor is a multidimensional array of numbers. In fact, vectors and matrices can be 
+treated as 1-D and 2-D tensors. In deep learning, tensors are mostly used for storing and 
+processing data. For example, an image in RGB is stored in a three-dimensional tensor, 
+where along one dimension we have the horizontal axis and along the other dimension 
+we have the vertical axis and where the third dimension corresponds to the three color 
+channels, namely, red, green, and blue. Another example is the four-dimensional 
+tensors used in feeding images through mini-batches in a convolutional neural network. 
+Along the first dimension, we have the image number in the batch, and along the second 
+dimension, we have the color channels, and the third and fourth dimensions correspond 
+to pixel location in the horizontal and vertical directions.

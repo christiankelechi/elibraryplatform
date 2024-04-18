@@ -1,0 +1,2 @@
+https://github.com/SoloBaChi/ai-library.git
+conda install -c conda-forge cryptography
