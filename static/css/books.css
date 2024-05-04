@@ -1,0 +1,63 @@
+
+
+
+/* ===============Recommendation Summarizer Styles============= */
+/* Section One */
+.books .section-one > .flex-container-2{
+align-items:flex-start;
+}
+.books .section-one .author-title{
+color: #4468F2;
+}
+.books .section-one h4{
+font-size:1rem;
+font-weight:700;
+}
+.books .section-one .author-name,
+.books .section-one .description
+{
+color: #7F7F7F;
+font-size:0.875rem;
+font-weight:600;
+}
+.books .section-one > .flex-container-2>*:first-child .img-container{
+border-radius:12px;
+}
+.books .section-one > .flex-container-2>*:first-child .img-container img{
+height:fit-content;
+}
+
+
+
+
+/* ===Section Two===== */
+.books .section-two .extracted-chapters {
+display:flex;
+}
+.books .section-two .extracted-chapters h4{
+text-align:center;
+}
+.books .section-two .extracted-chapters>*{
+margin:auto;
+flex-basis:72%;
+}
+.books .section-two .extracted-chapters .pages{
+text-align:center;
+margin:2.5rem;
+display:flex;
+gap:1rem;
+justify-content:center;
+}
+.books .section-two .extracted-chapters .pages button{
+background:transparent;
+display:inline-block;
+padding:1rem;
+border-radius:4px;
+flex-basis:22%;
+}
+.books .section-two .extracted-chapters .pages button.active{
+background: #4468F2;
+color:#fff;
+text-align:center;
+font-size:1rem;
+}

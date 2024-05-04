@@ -78,6 +78,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     def __str__(self):
         return f"{self.email}"
     def save(self, *args, **kwargs):
+        
         if self.confirm_password:
             self.confirm_password = hashlib.sha256(str(self.confirm_password).encode()).hexdigest()
         super().save(*args, **kwargs)

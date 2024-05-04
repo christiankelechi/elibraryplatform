@@ -61,11 +61,11 @@
 				<p>Do not have an account &quest; </p>
 				<a href="{% url 'security:signup' %}">sign up</a>
 			   </div>
-			</form>
-		</div>
-	</div>
-</section>
-</div>
+			
+			
+			<input type="hidden" name="next" value="{{ next }}">
+</form>
+
 
 </body>
 </html>

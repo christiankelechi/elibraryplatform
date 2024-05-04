@@ -1,0 +1,10 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\core_app_root",
+    "\\core_app_root\\ai_application_dashboard",
+    "\\core_app_root\\templates\\dashboard"
+  ],
+  "SelectedNode": "\\core_app_root\\ai_application_dashboard\\urls.py",
+  "PreviewInSolutionExplorer": false
+}

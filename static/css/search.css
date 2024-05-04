@@ -1,0 +1,41 @@
+/* Dashboard Search Styles */
+.dashboard-container.search .search-container{
+margin:2rem 0;
+}
+.search .search-container .form-field input{
+background: #4A4C52;
+color:#fff;
+text-indent:2rem;
+}
+ .search-container .img-container{
+width:12px;
+height:12px;
+position: absolute;
+left:25px;
+top:50%;
+transform:translate(0,-50%);
+cursor: pointer;
+}
+.search .search-container .form-field input::placeholder{
+text-align:center;
+color:#fff;
+text-indent:2rem;
+}
+.search .subcateg button{
+background: #5B5D6459;
+border-radius:8px;
+display:inline-block;
+margin-bottom:0.5rem;
+}
+
+
+
+
+
+
+
+@media(min-width:980px){
+.search .search-container .form-field input::placeholder{
+text-align:initial;
+}
+}

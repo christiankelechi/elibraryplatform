@@ -58,3 +58,54 @@ color: #4468F2;
 .form-container .form-field.terms input{
 width:initial;
 }
+
+/* =====================================
+Newly Added Styles
+========================================*/
+p.option{
+text-align:center;
+margin-top:2.5rem;
+}
+p.option span{
+text-align:center;
+position: relative;
+}
+p.option span::before{
+position: absolute; 
+display: inline-block;
+top:50%;
+left:20px;
+transform:translate(-0%,-50%);
+width:150px;
+height:1px;
+border:1px solid #A2A7BB;
+content:"";
+}
+p.option span::after{
+/* position:absolute; */
+position: absolute; 
+display: inline-block;
+top:50%;
+right:20px;
+transform:translate(-0%,-50%);
+width:150px;
+height:1px;
+border:1px solid #A2A7BB;
+content:"";
+}
+.form-container .cta-btn.face-recognition{
+background: #325260;
+}
+.form-container .continue-with .cta-btn span{
+position: relative;
+}
+.form-container .continue-with .cta-btn span::before{
+position: absolute;
+content:url(../icons/email-icon.svg);
+display:inline-block;
+top:-5px;
+left:-30px;
+}
+.form-container .continue-with .cta-btn.face-recognition span::before{
+content:url(../icons/face-recognition.svg);
+}

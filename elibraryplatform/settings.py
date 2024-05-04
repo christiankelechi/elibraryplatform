@@ -23,8 +23,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-xa#m-th*3m5^33%%38&r&e7pp3!j*qejd9kb7+5762^d9=$&&2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
-DEBUG = False
+DEBUG = True
+# DEBUG = False
 
 ALLOWED_HOSTS = ['.vercel.app', '.now.sh','*']
 
@@ -50,7 +50,10 @@ INSTALLED_APPS = [
     'core_app_root.security',
     'core_app_root.security.user',
     'core_app_root.security.auth',
-    'core_app_root.ai_applications'
+    'core_app_root.ai_applications',
+    'core_app_root.ai_application_dashboard',
+    # third party app
+    # 'django_two_factor_face_auth'
 ]
 
 
@@ -64,7 +67,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
-    'allauth.account.middleware.AccountMiddleware'
 ]
 
 
@@ -93,22 +95,22 @@ WSGI_APPLICATION = 'elibraryplatform.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER':'postgres.ugqzuivgrhgndhqqnbdg',
-        'PASSWORD':'Kelechi1999!',
-        'PORT':'5432 ',
-        'HOST':'aws-0-eu-central-1.pooler.supabase.com'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'postgres',
+#         'USER':'postgres.ugqzuivgrhgndhqqnbdg',
+#         'PASSWORD':'Kelechi1999!',
+#         'PORT':'5432 ',
+#         'HOST':'aws-0-eu-central-1.pooler.supabase.com'
+#     }
+# }
 
 
 # Password validation
@@ -146,9 +148,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT=os.path.join(BASE_DIR,'static')
-# STATICFILES_DIRS = [os.path.join(BASE_DIR/'static')]
-STATIC_ROOT = os.path.join(BASE_DIR,'static')
+# STATIC_ROOT=os.path.join(BASE_DIR,'static')
+STATICFILES_DIRS = [os.path.join(BASE_DIR/'static')]
+# STATIC_ROOT = os.path.join(BASE_DIR,'static')
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 

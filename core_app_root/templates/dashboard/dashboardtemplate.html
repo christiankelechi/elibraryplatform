@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+	{% load static %}
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/favicon" href="{% static './images/ai-logo.svg' %}">
+	<link rel="stylesheet" type="text/css" href="{% static './css/index.css' %}">
+	<!-- <script src="../js/password.js" defer></script> -->
+	<!-- <script src="../js/header.js" defer></script> -->
+	<title>Dashboard || Search</title>
+</head>
+<body>
+<!-- Header Section -->
+<div id="scroll-top"></div>
+<div class="dashboard-container grid-2">
+<header class="dashboard-header-container">
+ <a class="logo-img-container">
+	<img src="{% static './images/ai-logo.svg' %}" alt="logo">
+ </a>
+ <div class="dashboard-nav-container">
+	<nav class="dashboard-side-menu">
+		<ul class="list">
+		  <li class="inner-flex-2 active">
+			<div class="img-icon">
+				<img src="{% static './images/dashboard/icons/dashboard-icon.svg' %}" alt="dashboard">
+			</div>
+			<a href="./dashboard.html">dashboard</a>
+		   </li>
+		  <li class="inner-flex-2">
+			<div class="img-icon">
+				<img src="{% static './images/dashboard/search-icon.svg' %}" alt="search">
+			</div>
+			<a href="./search.html">search</a>
+		   </li>
+		  <li class="inner-flex-2">
+			<div class="img-icon">
+				<img src="{% static './images/dashboard/books-icon.svg' %}" alt="books">
+			</div>
+			<a href="./books.html">books</a>
+		   </li>
+		  <li class="inner-flex-2">
+			<div class="img-icon">
+				<img src="{% static './images/dashboard/recommendation-icon.svg' %}" alt="recommedation">
+			</div>
+			<a href="./recommedation.html">recommendations</a>
+		   </li>
+		  <li class="inner-flex-2">
+			<div class="img-icon">
+				<img src="{% static './images/dashboard/saved-icon.svg' %}" alt="save">
+			</div>
+			<a href="./save.html">saved</a>
+		   </li>
+		  <li class="inner-flex-2">
+			<div class="img-icon">
+				<img src="{% static './images/dashboard/text-summary-icon.svg' %}" alt="text summary">
+			</div>
+			<a href="./text-summariser.html">text summarizer</a>
+		   </li>
+		</ul>
+	</nav>
+ </div>
+</header>
+<main class="main-container">
+<div class="container-1">
+	<div class="inner-navigations">
+        <div class="flex-item">
+            <a href="./dashboard.html" class="nav-span left">
+                <svg width="11" height="16" viewBox="0 0 11 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.18838 14.7365L9.8623 14.0995L3.34788 7.942L9.8623 1.78452L9.18838 1.14752L2.00002 7.942L9.18838 14.7365Z" fill="white" stroke="white" stroke-width="1.5"/>
+                    </svg>
+                    
+            </a>
+            <a class="nav-span right" href="./search.html">
+                <svg width="11" height="16" viewBox="0 0 11 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2.44218 1.10966L1.76825 1.74666L8.28268 7.90413L1.76825 14.0616L2.44218 14.6986L9.63054 7.90413L2.44218 1.10966Z" fill="white" stroke="white" stroke-width="1.5"/>
+                    </svg>
+                    
+            </a>
+        </div>
+        <div class="flex-item">
+            <div class="img-container">
+                <img src="{% static './images/dashboard/icons/profile-icon.svg' %}" alt="user profile">
+            </div>
+        </div>
+	</div>
+</div>
+<div class="container-two">
+</div>
+<footer class="footer-container">
+	<!-- <section class="footer-section"></section> -->
+	<section class="footer-section">
+	 <div class="flex-container">
+		<div class="flex-item">
+		   <ul class="list-menu">
+			  <li><a href="#">discover</a>
+				 <ul class="nested-list-menu">
+					<li><a href="./dashboard/dashboard.html">dashboard</a></li>
+					<li><a href="#">advanced search</a></li>
+					<li><a href="#">saved books</a></li>
+					<li><a href="#">recommended books</a></li>
+					<li><a href="#">text summarizer books</a></li>
+					<li><a href="#">all books</a></li>
+				 </ul>
+			  </li>
+			  <li>
+				 <div class="img-container">
+					   <img src="{% static './images/ai-logo.svg' %}" alt="logo">
+				 </div>
+					<hr>
+					<div class="address">
+					   <address>
+						  <p><a href="tel:+234 9017912839">+234 90170912839</a></p>
+						  <p><a href="mailto:solobachi02@gmail.com">solobachi02@gmail.com</a></p>
+					   </address>
+				 </div>
+			  </li>
+			  <li>
+			   <a href="#">help</a>
+			   <ul class="nested-list-menu">
+				 <li><a href="#">report a problem</a></li>
+				 <li><a href="#">help center</a></li>
+			  </ul>
+			  </li>
+			  <li>
+			   <a href="#">info</a>
+			   <ul class="nested-list-menu">
+				 <li><a href="#">about us</a></li>
+				 <li><a href="#">works</a></li>
+				 <li><a href="#">contact us</a></li>
+			  </ul>
+			  </li>
+		   </ul>
+		</div>
+
+	 </div>
+	 <div class="footer-inner-flex">
+		<div class="flex-item">
+		   <span>&copy; 2024 &dash; copyright</span>
+		</div>
+		<div class="flex-item">
+		   <a class="scroll-top-container" href="#scroll-top">
+			  <img src="../icons/scroll-top.svg' %}" alt="scroll">
+		   </a>
+		</div>
+	 </div>
+	</section>
+ </footer>
+</main>
+</div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+
+/* ===============Save Styles============= */
+/* Section One */
+.saved .section-one .section-caption{
+display:flex;
+align-items:flex-end;
+margin:3.5rem 0;
+}
+.saved .section-one .section-caption .img-container{
+height:85px;
+width:85px;
+}

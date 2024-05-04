@@ -5,6 +5,7 @@
 /* GENERAL ELEMENTS STYLES */
 html {
     box-sizing: border-box;
+    scroll-behavior: smooth;
   }
   *,
   *::before,
@@ -161,7 +162,8 @@ html {
   .flex-container-2 > *,
   .flex-container-4 > *,
   .grid-container-3 > *,
-  .grid-container-5>* {
+  .grid-container-5>*,
+  .grid-container-2 {
     margin-bottom: 2.4rem;
   }
   
@@ -222,8 +224,12 @@ html {
     grid-template-columns:repeat(5,1fr);
     gap:1rem;
     }
+    .grid-container-2{
+    display:grid;
+    }
     .flex-container-2>*,
-    .grid-container-3 > * {
+    .grid-container-3 > * ,
+    .grid-container-2>*{
       margin-bottom: 0;
     }
   }
@@ -233,6 +239,10 @@ html {
     .flex-container-4 > * {
       flex-basis: 22%;
       margin-bottom: 0;
+    }
+    .grid-container-2{
+     grid-template-columns:repeat(2,1fr);
+     gap:1.2rem;
     }
   }
   

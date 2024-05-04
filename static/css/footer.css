@@ -1,0 +1,82 @@
+
+
+/* FOOTER STYLES */
+.footer-container{
+}
+
+.footer-container .flex-container .img-container{
+width:45px;
+height:45px;
+/* margin-left:auto; */
+margin-bottom:2rem;
+}
+
+.footer-container ul.list-menu{
+display:flex;
+gap:4%;
+flex-flow:row wrap;
+align-items:flex-start;
+}
+.footer-container ul.list-menu>*{
+flex-basis:48%;
+margin-bottom:2rem;
+}
+
+.footer-container ul.list-menu > li  > a{
+/* border:1px solid red; */
+color:#fff;
+text-transform:uppercase;
+font-weight:700;
+font-size:1rem;
+padding:0.75rem 0.25rem;
+}
+.footer-container ul ul > li > a{
+color: #A2A7BB;
+font-size:1rem;
+font-weight:400;
+padding:0;
+margin-bottom:0.5rem;
+}
+.footer-container p{
+line-height:0.8;
+}
+.footer-container p a{
+color:#fff;
+}
+
+/* ----------------scroll top-------------- */
+.scroll-top-container{
+height:45px;
+width:45px;
+padding:0;
+}
+.footer-inner-flex {
+display:flex;
+justify-content:space-between;
+margin-top:2rem;
+align-items:center;
+}
+
+
+
+
+/* ==========================DESKTOP DEVICE============== */
+@media(min-width:980px){
+.footer-container ul.list-menu{
+flex-wrap:nowrap;
+}
+.footer-container ul.list-menu>*{
+flex-basis:22%;
+}
+.footer-container ul.list-menu>*:nth-child(2){
+ order:4;
+}
+.footer-container ul.list-menu>*:nth-child(4){
+ order:3;
+ flex-basis:48%;
+}
+
+.footer-container .flex-container .img-container{
+margin-left:auto;
+}
+}

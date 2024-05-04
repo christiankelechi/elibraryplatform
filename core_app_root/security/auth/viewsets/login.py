@@ -8,7 +8,8 @@ from rest_framework import viewsets
 from core_app_root.security.user.models import User
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.authentication import BasicAuthentication
-
+from django.http import HttpResponseRedirect
+from core_app_root.security import base_url
 class LoginViewSet(viewsets.ModelViewSet):
     serializer_class = LoginSerializerClass
     permission_classes = (AllowAny,)
@@ -25,6 +26,7 @@ class LoginViewSet(viewsets.ModelViewSet):
                 return Response({"error_message":"You have to activate your account first","status":False}, status=status.HTTP_400_BAD_REQUEST)
             else:
                 return Response(serializer.validated_data, status=status.HTTP_200_OK)
+                # return HttpResponseRedirect(f"{base_url.main_url}/library/dashboard/")
         else:
             return Response({'error_msg':'User  with that email or password does not exist','status':False},status=status.HTTP_401_UNAUTHORIZED)
 
