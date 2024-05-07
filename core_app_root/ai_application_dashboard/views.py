@@ -14,7 +14,7 @@ from bs4 import BeautifulSoup
 import requests
 from .forms import SearchForm
 from pycite.pycite import PyCite
-
+from . import models
 def dashboard(request):
     return render(request,"dashboard/dashboard.html")
 
@@ -33,19 +33,21 @@ def search(request):
         if form.is_valid():
             query = form.cleaned_data['query']
             # Fetch data from other sites using the query
-            # url = 'https://google.com/search?q=' + query
-            # url=url
+            url = f'http://localhost' + query
+            search_results=fetch_search_results(url)
             # no_of_search=1
             # no_of_search=no_of_search
             # webbrowser.open(url)
-            return render(request, 'dashboard/search.html', {'form': form})
+            return render(request, 'dashboard/search.html', {'form': form,'search_results':search_results})
+        return render(request, 'dashboard/search.html', {'form': form,'search_results':search_results})
+        
     else:
         form = SearchForm()
     return render(request, 'dashboard/search.html', {'form': form})
 
 def fetch_search_results(query):
     # Example of fetching data from another site (modify this according to your needs)
-    url = 'https://google.com/search?q=' + query
+    url = '/search?q=' + query
     response = requests.get(url)
     
     soup = BeautifulSoup(response.text, 'html.parser')
@@ -55,16 +57,30 @@ def fetch_search_results(query):
 
 
 def book(request):
-    return render(request,'dashboard/books.html')
-
-def recommendation(request):
-    return render(request,'dashboard/recommendation.html')
+    list_of_books=models.Books.objects.all()
+    context={"book_list":list_of_books}
+    return render(request,'dashboard/books.html',context)
 
 def save_page(request):
-    return render(request,'dashboard/save.html')
+    book_to_save={"book":models.Books.objects.all()}
+    return render(request,'dashboard/save.html',book_to_save)
+
+def recommendation(request):
+    books_recommended=['Things fall Apart','Chinua Achebe','Computer Science']
+    for recommended_books in books_recommended:
+        context={"books":recommended_books}
+    context=context
+    return render(request,'dashboard/recommendation.html',context)
+
+# def save_page(request):
+#     book_to_save={"book":models.Books.objects.get().save}
+#     return render(request,'dashboard/save.html',book_to_save)
 
 def summarize(request):
+    context={"upload_message":"Upload Doc","text":""}
     if request.method == 'POST' and request.FILES['book_file']:
+        upload_message=f"{request.FILES['book_file']} uploaded"
+        context={"upload_message":upload_message,"text":""}
         uploaded_file = request.FILES['book_file']
         fs = FileSystemStorage()
         filename = fs.save(uploaded_file.name, uploaded_file)
@@ -80,9 +96,11 @@ def summarize(request):
         pdf_text=summarizetxt.generate_summary(str(pdf_text))
         # Now you can do something with the extracted text
         # For example, you could render it in a template
-        return render(request, 'dashboard/text-summariser.html', {'text': pdf_text})
+        context={"upload_message":upload_message,"text":pdf_text}
+        
+        return render(request, 'dashboard/text-summariser.html',context)
     
-    return render(request, 'dashboard/text-summariser.html',{'text':''})
+    return render(request, 'dashboard/text-summariser.html',context)
 
 def reference_generator(request):
     if request.method == 'POST':

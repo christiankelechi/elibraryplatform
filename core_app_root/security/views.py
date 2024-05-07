@@ -13,15 +13,8 @@ from rest_framework import status
 from .forms import UserCreationForm
 app_name='security'
 def login(request):
-    context=""
+    context={"error_messages":""}
     if request.method == 'POST':
-        form = AuthenticationForm(request, request.POST)
-
-        if form.is_valid():
-            print("valid")
-            face_image = prepare_image(form.cleaned_data['image'])
-            print(face_image)
-            face_id = FaceIdAuthBackend()
             email=request.POST['email']
             password=request.POST['password']
             signin_data={
@@ -30,28 +23,24 @@ def login(request):
                 }
             
             main_url=base_url.main_url+"login/"
-            user = face_id.authenticate(username=email, password=password, face_id=face_image)
-            if user is not None:
-                singin_response=requests.post(main_url,json=signin_data)
+            # user = face_id.authenticate(username=email, password=password, face_id=face_image)
+            # if user is not None:
+            singin_response=requests.post(main_url,json=signin_data)
 
-                if singin_response.status_code==200:
+            if singin_response.status_code==200:
                     
-                    singin_response=singin_response.json()
-                    print(singin_response)
-                    return redirect('dashboard_app:dashboard')
-                    
-                # username = form.cleaned_data['email']
-                # password = form.cleaned_data['password']
+                singin_response=singin_response.json()
+                print(singin_response)
                 return redirect('dashboard_app:dashboard')
+                    
+            
             else:
-                form.add_error(None, "Username, password or face id didn't match.")
-        else:
-            print("not valid")
-    else:
-        print("not valid")
-        form = AuthenticationForm()
-
-    context = {'form': form}
+                    # username = form.cleaned_data['email']
+                # password = form.cleaned_data['password']
+                context={"error_messages":"Check if email and password you entered is correct or not"}
+        
+    print(context)
+    context = context
     return render(request, 'auth/login.html', context)
 
 
@@ -60,6 +49,7 @@ def login(request):
 
 # Create your views here.
 def signup(request):
+    context={"signupErrorMessages":""}
     if request.method=='POST':
         # form = UserCreationForm(request.POST, request.FILES)
         
@@ -83,16 +73,17 @@ def signup(request):
                 print(singup_response)
                 # context="Signup Successful"
                 # return render(g)
-            
-            
-            
                 return redirect('security:login')
+            
             else:
+                context = {"signupErrorMessages":["1. Consider checking if your password is upto 8 characters or if username, email already exists in the database , and also check if you entered and confirmed your password "]}
                 # full_url=f"{base_url}auth/login"
-                return redirect("security:signup")
-    form = UserCreationForm()
-    context = {'form': form}
-    
+        else:
+        
+            context = {"signupErrorMessages":["1. Consider checking if your password is upto 8 characters or if username, email already exists in the database , and also check if you entered and confirmed your password "]}
+            # full_url=f"{base_url}auth/login"
+    context=context
+    print(context)
     return render(request,'auth/signup.html',context)
 
 def face_recognition(request):

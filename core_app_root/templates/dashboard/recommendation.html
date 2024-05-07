@@ -18,12 +18,13 @@
  <a class="logo-img-container">
 	<img src="{% static './images/ai-logo.svg' %}" alt="logo">
  </a>
+ 
  <div class="dashboard-nav-container">
 	<nav class="dashboard-side-menu">
 		<ul class="list">
-		  <li class="inner-flex-2">
+		  <li class="inner-flex-2 active">
 			<div class="img-icon">
-				<img src="{% static './images/dashboard/icons/dashboard-icon.svg' %}" alt="dashboard">
+				<img src="{% static './images/dashboard/dashboard-icon.svg' %}" alt="dashboard">
 			</div>
 			<a href="./dashboard.html">dashboard</a>
 		   </li>
@@ -31,31 +32,37 @@
 			<div class="img-icon">
 				<img src="{% static './images/dashboard/search-icon.svg' %}" alt="search">
 			</div>
-			<a href="./search.html">search</a>
+			<a href="{% url 'dashboard_app:search' %}">search</a>
 		   </li>
 		  <li class="inner-flex-2">
 			<div class="img-icon">
 				<img src="{% static './images/dashboard/books-icon.svg' %}" alt="books">
 			</div>
-			<a href="./books.html">books</a>
+			<a href="{% url 'dashboard_app:books' %}">books</a>
 		   </li>
-		  <li class="inner-flex-2 active">
+		  <li class="inner-flex-2">
 			<div class="img-icon">
-				<img src="{% static './images/dashboard/icons/active-recommendation-icon.svg' %}" alt="recommedation">
+				<img src="{% static './images/dashboard/recommendation-icon.svg' %}" alt="recommedation">
 			</div>
-			<a href="./recommedation.html">recommendations</a>
+			<a href="{% url 'dashboard_app:recommendation' %}">recommendations</a>
 		   </li>
 		  <li class="inner-flex-2">
 			<div class="img-icon">
 				<img src="{% static './images/dashboard/saved-icon.svg' %}" alt="save">
 			</div>
-			<a href="./save.html">saved</a>
+			<a href="{% url 'dashboard_app:save' %}">saved</a>
 		   </li>
 		  <li class="inner-flex-2">
 			<div class="img-icon">
-				<img src="{% static './images/dashboard/icons/active-text-summary.svg' %}" alt="text summary">
+				<img src="{% static './images/dashboard/text-summary-icon.svg' %}" alt="text summary">
 			</div>
-			<a href="./text-summariser.html">text summarizer</a>
+			<a href="{% url 'dashboard_app:summarize' %}">text summarizer</a>
+		   </li>
+		   <li class="inner-flex-2 active">
+			<div class="img-icon">
+				<img src="{% static './images/dashboard/icons/active-referance-icon.svg' %}" alt="reference generator">
+			</div>
+			<a href="{% url 'dashboard_app:citation' %}">reference generator</a>
 		   </li>
 		</ul>
 	</nav>

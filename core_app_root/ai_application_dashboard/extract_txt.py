@@ -29,6 +29,6 @@ def pdf_to_json(pdf_path, json_file):
     append_to_json(json_file, data)
 
 # Usage
-pdf_path = "mypython.pdf"
-json_file = "pdf_text.json"
-pdf_to_json(pdf_path, json_file)
+# pdf_path = "mypython.pdf"
+# json_file = "pdf_text.json"
+# pdf_to_json(pdf_path, json_file)
