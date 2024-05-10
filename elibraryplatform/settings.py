@@ -96,22 +96,35 @@ WSGI_APPLICATION = 'elibraryplatform.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'postgres',
-#         'USER':'postgres.ugqzuivgrhgndhqqnbdg',
-#         'PASSWORD':'Kelechi1999!',
-#         'PORT':'5432 ',
-#         'HOST':'aws-0-eu-central-1.pooler.supabase.com'
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+import sys
+if DEBUG is True:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+        }
+    }
+elif len(sys.argv) > 0 and sys.argv[1] != 'collectstatic':
+    # if os.getenv("DATABASE_URL", None) is None:
+    #     raise Exception("DATABASE_URL environment variable not defined")
+    DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'defaultdb',
+        'USER':'doadmin',
+        'PASSWORD':'AVNS_2VUPw3ccCs359cqiz4x',
+        'PORT':'25060',
+        'HOST':'kingsleyailibrary-do-user-16596059-0.c.db.ondigitalocean.com'
+    }
+}
+
+
 
 
 # Password validation
