@@ -1,0 +1,162 @@
+
+/* IMPORTED STYLES */
+@import url("owlcarousel.css");
+@import url("boilerplate.css");
+@import url("header.css");
+@import url("auth.css");
+@import url("dashboard.css");
+@import url("footer.css");
+@import url('search.css');
+@import url("text-summariser.css");
+@import url("recommendation.css");
+@import url("books.css");
+@import url("save.css");
+@import url("face-recog.css");
+@import url("reference-generator.css");
+
+
+
+/* HOME PAGE  STYLES */
+
+
+/* READING HABBITS */
+.reading-habbits .flex-container-2{
+/* border:1px solid blue; */
+}
+.reading-habbits .flex-container-2>*{
+/* border:1px solid red; */
+}
+.reading-habbits .flex-container-2>*:last-child{
+position: relative;
+}
+.reading-habbits .flex-container-2>*:last-child::before{
+content:"";
+display:inline-block;
+position: absolute;
+height:100%;
+width:154px;
+top:50px;
+left:52%;
+background:url(../images/habbits-2.svg) no-repeat top left/cover;
+border-radius:14px;
+}
+.reading-habbits .flex-container-2>*:last-child::after{
+content:"";
+display:inline-block;
+position: absolute;
+height:100%;
+width:154px;
+top:-50px;
+right:52%;
+background:url(../images/habbits-1.svg) no-repeat top left/cover;
+border-radius:14px;
+}
+.reading-habbits .img-container{
+height:235px;
+width:235px;
+margin:auto;
+}
+
+
+
+/* RECOMMENDSTIONS */
+.recommendations p{
+text-align:center;
+}
+
+/* SERVICES */
+.services-interactions .flex-container-2>*:first-child{
+flex-basis:32%;
+margin-right:auto;
+}
+
+/* TESTIMONIALS */
+.testimonials{
+background: linear-gradient(180deg, #11152D 0%, #121217 100%);
+position: relative;
+/* border:1px solid red; */
+/* margin-bottom:calc(3rem + 120px); */
+}
+.testimonials h2{
+background: linear-gradient(88.94deg, #F2A000 -4.03%, #FF9900 99.99%);
+background-clip:text;
+-webkit-background-clip: text;
+color:transparent;
+}
+.testimonials h3{
+color:#fff;
+}
+.testimonials > p{
+text-align:center;
+margin-bottom:1.8rem;
+}
+.testimonials .card{
+box-shadow: 0px 9px 12px 0px #00000040;
+background: #1F2029;
+color:#fff;
+border-radius:12px;
+}
+.testimonials .card .card-contents{
+padding:1rem;
+}
+.testimonials .card .img-container{
+width:54px;
+height:54px;
+}
+.testimonials .card-container{
+/* border:1px solid yellow; */
+/* margin-bottom:4.5rem; */
+}
+.testimonials .owl-carousel{
+/* border:1px solid red; */
+/* height:initial; */
+}
+
+
+
+/* Statics Path */
+.testimonials .statics-path{
+/* position: relative; */
+}
+.testimonials .statics-path .flex-container-2>*:last-child{
+position: relative;
+z-index:1010;
+}
+.testimonials .statics-chart.img-container{
+/* border:1px solid green; */
+position:absolute;
+bottom:0;
+left:0;
+/* width:100%; */
+height:140px;
+z-index:1000;
+}
+.testimonials .statics-chart.img-container img{
+height:100%;
+}
+
+
+/* REQUIREMENTS */
+.requirements{
+/* position: relative;
+z-index:1020; */
+}
+.requirements .grid-container-3{
+gap:1.2rem;
+background: #1F2029;
+border-radius:14px;
+padding:1rem;
+}
+.requirements .grid-container-3 h3{
+text-align:center;
+}
+
+
+
+
+/* DESKTOP DEVICE */
+@media(min-width:980px){
+.testimonials .card{
+min-height:380px;
+}
+}

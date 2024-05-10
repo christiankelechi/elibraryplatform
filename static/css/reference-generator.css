@@ -1,0 +1,30 @@
+/* =========Reference Generator Styles================= */
+.reference-generator .bottom .flex-container-2{
+gap:2%;
+}
+.reference-generator .bottom .flex-container-2>*{
+border: 1px solid #4468F2;
+border-radius:8px;
+}
+.reference-generator .bottom .flex-container-2>:first-child{
+flex-basis:76%;
+}
+.reference-generator .bottom .flex-container-2>:last-child{
+flex-basis:22%;
+margin-left:auto;
+}
+.reference-generator .bottom .flex-container-2 input{
+width:100%;
+padding:0.75rem;
+border-radius:8px;
+outline:none;
+border:none;
+background: #1F2029;
+color:#fff;
+}
+.reference-generator .bottom .flex-container-2 button{
+display:block;
+width:100%;
+margin-bottom:0;
+background: #1F2029 !important;
+}

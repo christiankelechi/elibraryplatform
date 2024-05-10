@@ -1,0 +1,23 @@
+
+
+
+/* ===============Recommendation Summarizer Styles============= */
+/* Section One */
+.recommendation .section-one .section-caption{
+    display:flex;
+    align-items:flex-end;
+    margin:3.5rem 0;
+    }
+.recommendation .section-one .section-caption .img-container{
+height:85px;
+width:85px;
+}
+.recommendation .section-two .group-btns button{
+border-radius:8px;
+display:inline-block;
+margin-bottom:0.5rem;
+background: #4468F2;
+}
+.recommendation .section-two .group-btns button:not(.active){
+background: #5B5D64;
+}

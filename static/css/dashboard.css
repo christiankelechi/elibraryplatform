@@ -1,0 +1,264 @@
+/* Dashboard Styles Goes here */
+.dashboard-container{
+/* border: 1px solid red; */
+padding:0.5rem;
+/* height:100vh; */
+}
+.dashboard-container a{
+color:#fff;
+/* border:1px solid; */
+}
+.grid-2>*{
+/* border:1px solid yellow; */
+box-shadow: 0px 0px 24px 0px #0000000D;
+}
+.grid-2>*:first-child{
+border-radius:0 16px 0 0;
+background: #1F2029;
+padding:1rem;
+}
+.grid-2>*:last-child{
+border-radius:16px;
+}
+.grid-2>*:last-child >*{
+background: #1F2029;
+box-shadow: 0px -9px 12px 0px #00000040;
+border-radius:16px 16px 0 0;
+padding:1rem;
+}
+.grid-2>*:last-child >*:first-child{
+border-radius:8px;
+margin-bottom:2rem;
+}
+.grid-2>*:last-child >*:last-child{
+border-radius:0 0 16px 16px;
+}
+
+.dashboard-header-container .logo-img-container{
+height:45px;
+width:45px;
+margin:auto;
+}
+
+
+/* ================SIDE MENU STYLES=============== */
+.dashboard-side-menu .img-icon{
+width:25px;
+height:25px;
+}
+.dashboard-side-menu .inner-flex-2{
+display:flex;
+align-items:center;
+margin-bottom:1rem;
+}
+
+.dashboard-side-menu .inner-flex-2.active a{
+font-size: 1rem;
+font-weight:800;
+}
+
+/* -----------Dashboard SideMenu -- Section  Styles------------- */
+/* =========SECTIION ONE============= */
+.dashboard-container .section-one.home{
+background:url(../images/dashboard/dashboard-home-hero.svg) no-repeat top left/cover;
+position: relative;
+z-index:1;
+display:flex;
+flex-direction:column;
+padding:0 2rem;
+min-height:240px;
+}
+.dashboard-container .section-one.home>*{
+margin:auto 0;
+}
+
+.dashboard-container .section-one.home::before{
+content:"";
+display:inline-block;
+width:100%;
+position: absolute;
+height:100%;
+border-radius:inherit;
+top:0;
+left:0;
+z-index:-1;
+background: linear-gradient(93.8deg, #1F2029 23.31%, rgba(31, 32, 41, 0.94) 35.52%, rgba(31, 32, 41, 0.9) 46.68%, rgba(248, 248, 248, 0) 99.68%);
+}
+.dashboard-container.home .section-one button{
+width:163px;
+}
+
+
+
+
+
+/* ================SECTION TWO================ */
+/* =================Section Two============== */
+.dashboard-container .section-two h2,
+.dashboard-container .section-one h2{
+font-weight:700;
+text-align:initial;
+margin-bottom:1rem;
+}
+.dashboard-container .section-two h4{
+font-weight:700;
+font-size:0.95rem;
+margin:1rem 0;
+}
+.dashboard-container .section-two{
+padding:2rem;
+}
+.dashboard-container .section-two{
+/* margin-bottom:3.5rem; */
+}
+.dashboard-container .section-two.home .flex-container-2{
+justify-content:space-between;
+display:flex;
+align-items:flex-start;
+}
+/* .dashboard-container .section-two .flex-container-2 h4, */
+.dashboard-container .section-two.home .flex-container-2>*{
+flex-basis:auto;
+margin-bottom:0;
+padding:0;
+}
+.dashboard-container .books-card-section .progress-bar{
+font-size:700;
+font-size:0.75rem;
+}
+.dashboard-container .books-card-section h5{
+margin-bottom:0.4rem;
+}
+.dashboard-container .books-card-section .book-card{
+padding:0.5rem;
+position: relative;
+width:185px;
+margin:auto;
+display:inline-block;
+}
+.dashboard-container  .book-card .love-icon{
+position: absolute;
+top:10px;
+right:10px;
+width:26px;
+height:25px;
+background: #93939340;
+display:flex;
+border-radius:3px;
+opacity:0;
+transition:0.5s ease;
+}
+.dashboard-container .books-card-section .book-card:hover .love-icon{
+opacity:1;
+cursor: pointer;
+}
+
+.dashboard-container .books-card-section .top-section{
+min-height:200px;
+/* width:168px; */
+}
+.dashboard-container .books-card-section .top-section .img-container{
+border-radius:8px;
+}
+.dashboard-container .books-card-section .bottom-section{
+margin-top:0.8rem;
+}
+.dashboard-container  .book-card .love-icon .img-container{
+width:12px;
+height:12px;
+margin:auto;
+}
+.dashboard-container .books-card-section .img-container img{
+height:fit-content;
+}
+.books-card-section.grid-container-5{
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:1rem;
+overflow:auto;
+width:65vw;
+}
+.books-card-section.grid-container-5::-webkit-scrollbar{
+appearance: none;
+}
+
+
+
+/* =====================MAIN CONTAIER STYLES===================== */
+.inner-navigations {
+display:flex;
+justify-content:space-between;
+}
+.inner-navigations .nav-span{
+display:inline-block;
+height:30px;
+width:30px;
+border-radius:50%;
+border:1px solid #D9D9D9;
+position: relative;
+text-align:center;
+line-height:30px;
+padding:0;
+}
+.inner-navigations .img-container{
+width:30px;
+height:30px;
+}
+
+
+
+
+
+
+
+
+
+/* ==============Desktop Device============ */
+@media(min-width:980px){
+.dashboard-container{
+/* border: 2px solid red; */
+}
+.dashboard-container .section-one h2{
+font-size:2rem;
+text-transform:initial;
+}
+.dashboard-container .section-one h4{
+font-size:1.5rem;
+}
+
+/* ========dashboard grid styles========== */
+.grid-2{
+display:grid;
+gap:0.8rem;
+grid-template-columns:repeat(1,fit-content(317px) 1fr);
+}
+
+
+/* -----------Dashboard SideMenu -- Section  Styles------------- */
+/* .dashboard-container .section-one{
+min-height:240px;
+} */
+.dashboard-container .section-one{
+display:flex;
+flex-direction:column;
+}
+.dashboard-container .section-one>*{
+margin:auto 0;
+}
+.dashboard-container .section-two h4{
+font-size:1.2rem;
+}
+
+}
+
+
+
+
+/* ==================================
+ Large Desktop Device
+=====================================*/
+@media(min-width:120px){
+.books-card-section.grid-container-5{
+width:65vw;
+}
+}
