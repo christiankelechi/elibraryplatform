@@ -1,1 +1,1 @@
-main_url='http://localhost:8000/'
+main_url='https://elibraryplatform.onrender.com/'
