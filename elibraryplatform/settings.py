@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-xa#m-th*3m5^33%%38&r&e7pp3!j*qejd9kb7+5762^d9=$&&2
 # DEBUG = True
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['192.168.186.107','https://elibraryplatform.onrender.com','*']
 
 # ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 # Application definition
@@ -65,7 +65,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
-    'core_app_root.middleware.NoStaticMiddleware',
     
 ]
 
@@ -101,26 +100,26 @@ WSGI_APPLICATION = 'elibraryplatform.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
-import sys
-if DEBUG is True:
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.sqlite3",
-            "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
-        }
-    }
-elif len(sys.argv) > 0 and sys.argv[1] != 'collectstatic':
-    # if os.getenv("DATABASE_URL", None) is None:
-    #     raise Exception("DATABASE_URL environment variable not defined")
-    DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'defaultdb',
-        'USER':'doadmin',
-        'PASSWORD':'AVNS_2VUPw3ccCs359cqiz4x',
-        'PORT':'25060',
-        'HOST':'kingsleyailibrary-do-user-16596059-0.c.db.ondigitalocean.com'
-    }
+# import sys
+# if DEBUG is True:
+#     DATABASES = {
+#         "default": {
+#             "ENGINE": "django.db.backends.sqlite3",
+#             "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+#         }
+#     }
+# elif len(sys.argv) > 0 and sys.argv[1] != 'collectstatic':
+#     # if os.getenv("DATABASE_URL", None) is None:
+#     #     raise Exception("DATABASE_URL environment variable not defined")
+DATABASES = {
+'default': {
+    'ENGINE': 'django.db.backends.postgresql',
+    'NAME': 'defaultdb',
+    'USER':'doadmin',
+    'PASSWORD':'AVNS_2VUPw3ccCs359cqiz4x',
+    'PORT':'25060',
+    'HOST':'kingsleyailibrary-do-user-16596059-0.c.db.ondigitalocean.com'
+}
 }
 
 
@@ -159,9 +158,10 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
-
-STATIC_URL = "/static/"
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+STATIC_URL = 'static/'
+STATIC_ROOT=os.path.join(BASE_DIR,'static')
+MEDIA_URL='media/'
+STATIC_MEDIA=os.path.join(BASE_DIR,'media')
 # STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 # STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
