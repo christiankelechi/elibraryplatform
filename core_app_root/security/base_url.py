@@ -1,1 +1,1 @@
-main_url='https://elibraryplatform-1.onrender.com/'
+main_url='https://elibraryplatform.onrender.com/'
