@@ -26,8 +26,9 @@ SECRET_KEY = 'django-insecure-xa#m-th*3m5^33%%38&r&e7pp3!j*qejd9kb7+5762^d9=$&&2
 # DEBUG = True
 DEBUG = False
 
-ALLOWED_HOSTS = ['.vercel.app', '.now.sh','*']
+ALLOWED_HOSTS = ['*']
 
+# ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 # Application definition
 
 INSTALLED_APPS = [
@@ -161,10 +162,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
-# STATIC_ROOT=os.path.join(BASE_DIR,'static')
-# STATICFILES_DIRS = [os.path.join(BASE_DIR/'static')]
-STATIC_ROOT = os.path.join(BASE_DIR,'static')
+STATIC_URL = "/static/"
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
