@@ -20,12 +20,12 @@ def dashboard(request):
 
 from django.shortcuts import render
 from .forms import SearchForm
-import webview
+# import webview
 no_of_search=0
 url=""
-def open_search_view_results(url):
-    webview.create_window('Search Results', url)
-    webview.start()
+# def open_search_view_results(url):
+    # webview.create_window('Search Results', url)
+    # webview.start()
 
 def search(request):
     if request.method == 'POST':
