@@ -3,8 +3,8 @@ from django.shortcuts import render,redirect
 import requests
 from rest_framework.response import Response
 from .forms import *
-from core_app_root.security import authenticate
-from core_app_root.security.authenticate import FaceIdAuthBackend
+# from core_app_root.security import authenticate
+# from core_app_root.security.authenticate import FaceIdAuthBackend
 from core_app_root.security.forms import AuthenticationForm
 from core_app_root.security.utils import prepare_image
 from elibraryplatform import settings
@@ -97,8 +97,8 @@ def register(request):
             form.save()
             username = form.cleaned_data['username']
             password = form.cleaned_data['password2']
-            user = authenticate(username=username, password=password)
-            login(request, user)
+            # user = authenticate(username=username, password=password)
+            # login(request, user)
             return redirect('security:login')
     else:
         form = UserCreationForm()
@@ -116,13 +116,9 @@ def face_login(request):
             password = form.cleaned_data['password']
             face_image = prepare_image(form.cleaned_data['image'])
 
-            face_id = FaceIdAuthBackend()
-            user = face_id.authenticate(username=username, password=password, face_id=face_image)
-            if user is not None:
-                login(request, user)
-                return redirect('security:login')
-            else:
-                form.add_error(None, "Username, password or face id didn't match.")
+            
+            return redirect('security:login')
+        
     else:
         form = AuthenticationForm()
 
