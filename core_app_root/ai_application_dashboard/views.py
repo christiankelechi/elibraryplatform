@@ -5,7 +5,7 @@ import threading
 from django.core.files.storage import FileSystemStorage
 # Create your views here.
 from . import extract_txt
-from . import summarizetxt
+# from . import summarizetxt
 import ast
 from ast import literal_eval
 from django.shortcuts import render
@@ -93,7 +93,8 @@ def summarize(request):
         with open("extracted_book_text.json", "r") as f:
             pdf_text = f.read()
         
-        pdf_text=summarizetxt.generate_summary(str(pdf_text))
+        pdf_text=""
+        # summarizetxt.generate_summary(str(pdf_text))
         # Now you can do something with the extracted text
         # For example, you could render it in a template
         context={"upload_message":upload_message,"text":pdf_text}
