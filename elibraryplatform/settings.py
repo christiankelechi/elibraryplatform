@@ -68,7 +68,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
-     'core_app_root.middleware.NoStaticMiddleware',
+    'core_app_root.middleware.NoStaticMiddleware',
+    'allauth.account.middleware.AccountMiddleware'
 ]
 
 
