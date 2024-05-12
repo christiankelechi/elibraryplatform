@@ -69,7 +69,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'core_app_root.middleware.NoStaticMiddleware',
-    # 'allauth.account.middleware.AccountMiddleware'
+    'allauth.account.middleware.AccountMiddleware'
 ]
 
 
